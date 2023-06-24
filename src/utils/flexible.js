@@ -8,3 +8,18 @@ const { width } = useWindowSize()
 export const isMobileTerminal = computed(() => {
   return width.value < PC_DEVICE_WIDTH
 })
+
+/**
+ * 动态指定 rem 基准值 最大不能超过 40px
+ * 根据用户屏幕宽度  把计算出来的值赋值给根标签的fontsize大小
+ */
+export const useREM = () => {
+  const MAX_FONT_SIZE = 40
+  document.addEventListener('DOMContentLoaded', () => {
+    const html = document.querySelector('html')
+    // 屏幕宽度 除以 10
+    let fontSize = window.innerWidth / 10
+    fontSize = fontSize > MAX_FONT_SIZE ? MAX_FONT_SIZE : fontSize
+    html.style.fontSize = fontSize + 'px'
+  })
+}
