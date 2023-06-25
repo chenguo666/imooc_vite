@@ -1,6 +1,5 @@
 <template>
   <!-- 一级路由出口 -->
-  <my-button type="info">你好</my-button>
   <router-view />
 </template>
 <script setup>

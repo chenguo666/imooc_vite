@@ -8,6 +8,7 @@
         'active:scale-105': isActiveAnim
       }
     ]"
+    @click="onBtnClick"
   >
     <my-svg-icon
       v-if="loading"
@@ -26,6 +27,7 @@
   </button>
 </template>
 <script>
+const EMITS_CLICK = 'click'
 const typeEnum = {
   primary: 'text-white bg-zinc-800 hover:bg-zinc-900 active:bg-zinc-800',
   main: 'text-white bg-main hover:bg-hover-main active:bg-main',
@@ -37,7 +39,7 @@ const sizeEnum = {
     icon: ''
   },
   'icon-default': {
-    button: 'w-8 h-4',
+    button: 'w-4 h-4',
     icon: 'w-1.5 h-1.5'
   },
   small: {
@@ -90,9 +92,13 @@ const props = defineProps({
     default: false
   }
 })
-
+const emits = defineEmits([EMITS_CLICK])
 const sizeKey = computed(() => {
   return props.icon ? 'icon-' + props.size : props.size
 })
+const onBtnClick = () => {
+  if (props.loading) return
+  emits(EMITS_CLICK)
+}
 </script>
 <style scope></style>
