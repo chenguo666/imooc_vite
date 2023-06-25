@@ -13,6 +13,7 @@
       <!-- 汉堡按钮 -->
       <li
         class="fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white z-20 shadow-l-white"
+        @click="onShowPopup"
       >
         <my-svg-icon name="hamburger" class="w-1.5 h-1.5"></my-svg-icon>
       </li>
@@ -31,10 +32,14 @@
       </li>
     </ul>
   </div>
+  <my-popup v-model="isVisable">
+    <menu-vue :categorys="data" @onItemClick="onItemClick"></menu-vue>
+  </my-popup>
 </template>
 <script setup>
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
+import MenuVue from '@/views/main/components/menu/index.vue'
 defineProps({
   data: {
     type: Array,
@@ -45,7 +50,7 @@ defineProps({
 const sliderTarget = ref()
 const sliderStyle = ref({
   transform: 'translateX(0px)',
-  width: '60px'
+  width: '52px'
 })
 const currentCategoryIndex = ref(0)
 let itemRefs = []
@@ -71,6 +76,12 @@ watch(currentCategoryIndex, (val) => {
 })
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
+  isVisable.value = false
+}
+// 控制popup展示
+const isVisable = ref(false)
+const onShowPopup = () => {
+  isVisable.value = true
 }
 </script>
 <style scope></style>
