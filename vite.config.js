@@ -11,6 +11,7 @@ export default defineConfig({
       mockPath: './src/mock',
       supportTs: false
     }),
+    // 配置svg图标需要
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       symbolId: 'icon-[name]'

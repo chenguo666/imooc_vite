@@ -1,8 +1,12 @@
 // import svgIcon from './svg-icon/index.vue'
 // import popup from './popup/index.vue'
 import { defineAsyncComponent } from 'vue'
+/**
+ * 自动注册该目录下的所有组件
+ */
 export default {
   install(app) {
+    // console.log('app', app)
     // app.component('my-svg-icon', svgIcon)
     // app.component('my-popup', popup)
     // 1. 获取当前路径下的所有的index.vue
