@@ -620,7 +620,7 @@ export default [
     }
   },
   {
-    url: '/api/pexels/list', //这里的api相当于公共请求头，根据自己的需要修改
+    url: '/api/pexels/page', //这里的api相当于公共请求头，根据自己的需要修改
     method: 'get',
     response: ({ query }) => {
       return {
