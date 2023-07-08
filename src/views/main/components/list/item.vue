@@ -34,7 +34,7 @@
       {{ data.title }}
     </p>
     <div class="flex items-center mt-1 px-1">
-      <img :src="data.avator" alt="" class="h-2 w-2 rounded-full" />
+      <img :src="data.avatar" alt="" class="h-2 w-2 rounded-full" />
       <span class="text-sm text-zinc-500 ml-1">{{ data.author }}</span>
     </div>
   </div>
