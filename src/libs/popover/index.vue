@@ -36,11 +36,10 @@ const props = defineProps({
     type: String,
     default: PROP_TOP_LEFT,
     validator(val) {
-      const result = placementEnum.includes(val)
-
+      const result = placementEnum.includes(val.trim())
       if (!result) {
         throw new Error(
-          `你的placement 必须是 ${placementEnum.join('.')}中的一个`
+          `你的placement 必须是 ${placementEnum.join('，')}中的一个`
         )
       }
       return result

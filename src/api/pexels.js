@@ -5,3 +5,21 @@ export const getPexlesList = (data) => {
     params: data
   })
 }
+export const getHint = (q) => {
+  return request({
+    url: '/pexels/hint',
+    params: {
+      q
+    }
+  })
+}
+export const getTheme = () => {
+  return request({
+    url: '/pexels/themes'
+  })
+}
+export const getPexelsFromId = (id) => {
+  return request({
+    url: `/pexels/${id}`
+  })
+}

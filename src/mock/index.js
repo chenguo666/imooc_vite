@@ -679,5 +679,233 @@ export default [
         message: 'success'
       }
     }
+  },
+  {
+    url: '/api/pexels/hint',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: {
+          total: 97,
+          result: [
+            '1920x1080',
+            '1626',
+            '1元购',
+            '12306',
+            '1920背景',
+            '1周年',
+            '123',
+            '100',
+            '19天',
+            '19'
+          ]
+        },
+        message: 'success'
+      }
+    }
+  },
+  {
+    url: '/api/pexels/themes',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: {
+          themes: [
+            {
+              id: 'Parenting',
+              photo:
+                'https://images.pexels.com/photos/3663038/pexels-photo-3663038.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '亲子'
+            },
+            {
+              id: 'green',
+              photo:
+                'https://images.pexels.com/photos/8117889/pexels-photo-8117889.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '绿色'
+            },
+            {
+              id: 'black theme',
+              photo:
+                'https://images.pexels.com/photos/1356300/pexels-photo-1356300.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '黑色'
+            },
+            {
+              id: 'Botany',
+              photo:
+                'https://images.pexels.com/photos/212940/pexels-photo-212940.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '植物'
+            },
+            {
+              id: 'Happy Feet',
+              photo:
+                'https://images.pexels.com/photos/631988/pexels-photo-631988.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '快乐'
+            },
+            {
+              id: 'Like a breath of fresh air',
+              photo:
+                'https://images.pexels.com/photos/7412111/pexels-photo-7412111.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '小清新'
+            },
+            {
+              id: 'food photography',
+              photo:
+                'https://images.pexels.com/photos/1652312/pexels-photo-1652312.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360',
+              title: '美食摄影'
+            }
+          ]
+        },
+        message: 'success'
+      }
+    }
+  },
+  {
+    url: '/api/pexelss/captcha',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: true,
+        message: '验证成功！'
+      }
+    }
+  },
+  {
+    url: '/api/user/profile',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: {
+          qqOpenId: '',
+          wxOpenId: 'oDafJ5-b6dMT9pw2ABMhjtwuVdnE',
+          nickname: 'zhhhh',
+          title: '前端开发',
+          company: '111',
+          homePage: '111',
+          introduction: '1111',
+          vipLevel: 0,
+          regTime: '2022-05-09T03:01:09.604Z',
+          avatar:
+            'http://imooc-front.oss-cn-beijing.aliyuncs.com/images/zhhhh/1689059038193.png',
+          outTradeNo: 'f62f077e-0297-4c23-8712-7db1c7b1f4f5',
+          payResult: false,
+          _id: '627a02eb2c52984b0364364c',
+          username: 'admin',
+          __v: 0
+        },
+        message: 'success'
+      }
+    }
+  },
+  {
+    url: '/api/sys/login',
+    method: 'GET',
+    response: () => {
+      return {
+        success: true,
+        code: 200,
+        data: {
+          token: '740487ce-9296-47b3-b425-dd40713532c3'
+        },
+        message: '登录成功'
+      }
+    }
+  },
+  {
+    url: '/api/pexels/:id',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: {
+          tags: ['all', 'home', 'desire', 'pets'],
+          _id: '62208123fb7e8b6da85b7dfe',
+          photoLink: 'https://www.pexels.com/zh-cn/photo/8051987/',
+          photo:
+            'https://images.pexels.com/photos/8051987/pexels-photo-8051987.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          authorLike: 'https://www.pexels.com/zh-cn/@ugurcan-ozmen-61083217',
+          avatar:
+            'https://images.pexels.com/users/avatars/61083217/ugurcan-ozmen-235.jpeg?auto=compress&fit=crop&h=60&w=60',
+          author: 'Uğurcan Özmen',
+          photoDownLink: 'https://www.pexels.com/photo/8051987/download/',
+          id: '8051987',
+          title: '图片数据来自 pexels ',
+          photoWidth: 500,
+          photoHeight: 625,
+          photoType: 'jpg',
+          __v: 0
+        },
+        message: 'success'
+      }
+    }
+  },
+  {
+    url: '/api/user/vip/pay/list',
+    method: 'GET',
+    response: ({ query }) => {
+      return {
+        success: true,
+        code: 200,
+        data: [
+          {
+            id: 0,
+            title: '连续包月',
+            desc: '次月 ¥19 续费,可随时取消',
+            oldPrice: '29',
+            price: '9',
+            isHot: true
+          },
+          {
+            id: 1,
+            title: '连续包年',
+            desc: '次月 ¥198 续费,可随时取消',
+            oldPrice: '258',
+            price: '198',
+            isHot: false
+          },
+          {
+            id: 2,
+            title: '连续包季',
+            desc: '次月 ¥53 续费,可随时取消',
+            oldPrice: '68',
+            price: '53',
+            isHot: false
+          },
+          {
+            id: 3,
+            title: '月卡',
+            desc: '',
+            oldPrice: '39',
+            price: '29',
+            isHot: false
+          },
+          {
+            id: 4,
+            title: '季卡',
+            desc: '',
+            oldPrice: '79',
+            price: '68',
+            isHot: false
+          },
+          {
+            id: 5,
+            title: '年卡',
+            desc: '',
+            oldPrice: '298',
+            price: '258',
+            isHot: false
+          }
+        ],
+        message: 'success'
+      }
+    }
   }
 ]

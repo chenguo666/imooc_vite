@@ -1,6 +1,9 @@
 // import svgIcon from './svg-icon/index.vue'
 // import popup from './popup/index.vue'
 import { defineAsyncComponent } from 'vue'
+
+export { confirm } from './confirm/index'
+export { message } from './message/index'
 /**
  * 自动注册该目录下的所有组件
  */

@@ -8,6 +8,7 @@ export const ALL_CATEGORY_ITEM = {
 export const THEME_LIGHT = 'THEME_LIGHT'
 export const THEME_DARK = 'THEME_DARK'
 export const THEME_SYSTEM = 'THEME_SYSTEM'
+export const FEEDBACK = 'https://support.qq.com/product/603734'
 
 export const CATEGORY_NOMAR_DATA = [
   ALL_CATEGORY_ITEM,
@@ -106,3 +107,8 @@ export const CATEGORY_NOMAR_DATA = [
     urlname: 'wedding_events'
   }
 ]
+
+export const LOGIN_TYPE_USERNAME = 'username'
+// STS 上传数据
+export const REGION = 'oss-cn-beijing'
+export const BUCKET = 'imooc-front'

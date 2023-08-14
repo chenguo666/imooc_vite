@@ -23,9 +23,9 @@
         :key="item.id"
         class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
         :ref="setItemRef"
-        @click="onItemClick(index)"
+        @click="onItemClick(item)"
         :class="{
-          'text-zinc-100': currentCategoryIndex === index
+          'text-zinc-100': $store.getters.currentCategoryIndex === index
         }"
       >
         {{ item.name }}
@@ -40,6 +40,8 @@
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
 import MenuVue from '@/views/main/components/menu/index.vue'
+import { useStore } from 'vuex'
+const store = useStore()
 // defineProps({
 //   data: {
 //     type: Array,
@@ -53,7 +55,7 @@ const sliderStyle = ref({
   transform: 'translateX(0px)',
   width: '52px'
 })
-const currentCategoryIndex = ref(0)
+// const currentCategoryIndex = ref(0)
 let itemRefs = []
 const setItemRef = (el) => {
   if (el) {
@@ -68,15 +70,18 @@ onBeforeUpdate(() => {
 const ulTarget = ref(null)
 // 通过vueuse useScorll 获取响应式的scroll滚动距离
 const { x: ulScrollLeft } = useScroll(ulTarget)
-watch(currentCategoryIndex, (val) => {
-  const { left, width } = itemRefs[val].getBoundingClientRect()
-  sliderStyle.value = {
-    transform: `translateX(${ulScrollLeft.value + left - 10}px)`,
-    width: width + 'px'
+watch(
+  () => store.getters.currentCategoryIndex,
+  (val) => {
+    const { left, width } = itemRefs[val].getBoundingClientRect()
+    sliderStyle.value = {
+      transform: `translateX(${ulScrollLeft.value + left - 10}px)`,
+      width: width + 'px'
+    }
   }
-})
-const onItemClick = (index) => {
-  currentCategoryIndex.value = index
+)
+const onItemClick = (item) => {
+  store.commit('app/changeCurrentCategory', item)
   isVisable.value = false
 }
 // 控制popup展示

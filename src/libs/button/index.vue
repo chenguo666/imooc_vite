@@ -55,7 +55,7 @@ const sizeEnum = {
 </script>
 <script setup>
 import { computed } from 'vue'
-
+import mySvgIcon from '../svg-icon/index.vue'
 const props = defineProps({
   icon: String,
   iconColor: String,

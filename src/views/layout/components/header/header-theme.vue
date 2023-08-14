@@ -1,9 +1,9 @@
 <template>
-  <my-popover placement="top-left">
+  <my-popover placement="top-left ">
     <template #reference>
       <my-svg-icon
         :name="svgIconName"
-        class="w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
+        class="guide-theme w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
         fillClass=" fill-zinc-900 dark:fill-zinc-300"
       ></my-svg-icon>
     </template>
