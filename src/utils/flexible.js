@@ -6,7 +6,10 @@ import { computed } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 const { width } = useWindowSize()
 export const isMobileTerminal = computed(() => {
-  return width.value < PC_DEVICE_WIDTH
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+  // return width.value < PC_DEVICE_WIDTH
 })
 
 /**
